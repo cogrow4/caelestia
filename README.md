@@ -1,143 +1,191 @@
-# caelestia
+# 🌌 Caelestia
 
-This is the main repo of the caelestia dots and contains the user configs for
-apps. This repo also includes an install script to install the entire dots.
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/caelestia-dots/caelestia/graphs/commit-activity)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![AUR](https://img.shields.io/aur/version/caelestia-meta?color=1793D1&label=AUR%20Package)](https://aur.archlinux.org/packages/caelestia-meta)
 
-## Installation
+> A modern, elegant, and highly customizable dotfiles configuration for Linux, featuring Hyprland, Fish shell, and a carefully curated set of applications.
 
-Simply clone this repo and run the install script (you need
-[`fish`](https://github.com/fish-shell/fish-shell) installed).
+## 📸 Screenshots
 
-> [!WARNING]
-> The install script symlinks all configs into place, so you CANNOT
-> move/remove the repo folder once you run the install script. If
-> you do, most apps will not behave properly and some (e.g. Hyprland)
-> will fail to start completely. I recommend cloning the repo to
-> `~/.local/share/caelestia`.
+| ![Main Desktop](screenshots/main.png) | 
+|:--:| 
+| *Caelestia Desktop Environment* |
 
-The install script has some options for installing configs for some apps.
+| ![Screenshot 1](screenshots/20251020210630.png) |
+|:--:|:--:|
+| *Application View* | *Terminal Workflow* |
 
-```
-$ ./install.fish -h
-usage: ./install.sh [-h] [--noconfirm] [--spotify] [--vscode] [--discord] [--aur-helper]
+| ![Screenshot 2](screenshots/20251020210651.png) | ![Screenshot 3](screenshots/20251020210714.png) |
+|:--:|:--:|
+| *Customization* | *All Tabs* |
 
-options:
-  -h, --help                  show this help message and exit
-  --noconfirm                 do not confirm package installation
-  --spotify                   install Spotify (Spicetify)
-  --vscode=[codium|code]      install VSCodium (or VSCode)
-  --discord                   install Discord (OpenAsar + Equicord)
-  --zen                       install Zen browser
-  --aur-helper=[yay|paru]     the AUR helper to use
-```
+## ✨ Features
 
-For example:
+- 🖥️ **Hyprland** - A dynamic tiling Wayland compositor
+- 🐚 **Fish Shell** with Starship prompt for a modern terminal experience
+- 🎨 Consistent theming across all applications
+- ⚡ Optimized for performance and productivity
+- 🔧 Easy installation and configuration
+- 🎯 Works out of the box with sensible defaults
 
-```sh
+## 📦 Installation
+
+### Prerequisites
+
+- [Fish shell](https://github.com/fish-shell/fish-shell)
+- Git
+- An AUR helper (yay or paru) for Arch Linux users
+
+### Quick Install (Recommended)
+
+```bash
 git clone https://github.com/caelestia-dots/caelestia.git ~/.local/share/caelestia
 ~/.local/share/caelestia/install.fish
 ```
 
-### Manual installation
+> **Warning**
+> The install script creates symlinks to the config files. Do not move or remove the repository after installation.
 
-Dependencies:
+### Installation Options
 
--   hyprland
--   xdg-desktop-portal-hyprland
--   xdg-desktop-portal-gtk
--   hyprpicker
--   wl-clipboard
--   cliphist
--   inotify-tools
--   app2unit
--   wireplumber
--   trash-cli
--   foot
--   fish
--   fastfetch
--   starship
--   btop
--   jq
--   eza
--   adw-gtk-theme
--   papirus-icon-theme
--   qt5ct-kde
--   qt6ct-kde
--   ttf-jetbrains-mono-nerd
+The install script includes several options:
 
-Install all dependencies and follow the installation guides of the
-[shell](https://github.com/caelestia-dots/shell) and [cli](https://github.com/caelestia-dots/cli)
-to install them.
+```bash
+$ ./install.fish -h
+Usage: ./install.fish [OPTIONS]
 
-> [!TIP]
-> If on Arch or an Arch-based distro, there is a meta package available in the AUR
-> that pulls in all dependencies (`caelestia-meta`).
+Options:
+  -h, --help                  Show this help message
+  --noconfirm                 Skip confirmation prompts
+  --spotify                   Install Spotify with Spicetify
+  --vscode=[codium|code]      Install VSCodium or VSCode
+  --discord                   Install Discord with OpenAsar + Equicord
+  --zen                       Install Zen browser
+  --aur-helper=[yay|paru]     Specify AUR helper (default: auto-detect)
+```
 
-Then copy or symlink the `hypr`, `foot`, `fish`, `fastfetch`, `uwsm` and `btop` folders to the
-`$XDG_CONFIG_HOME` (usually `~/.config`) directory. e.g. `hypr -> ~/.config/hypr`.
-Copy `starship.toml` to `$XDG_CONFIG_HOME/starship.toml`.
+### Manual Installation
 
-#### Installing Spicetify configs:
+For manual installation, you'll need to install the following dependencies:
 
-Follow the Spicetify [installation instructions](https://spicetify.app/docs/advanced-usage/installation),
-copy or symlink the `spicetify` folder to `$XDG_CONFIG_HOME/spicetify` and run
+#### Core Dependencies
 
-```sh
+```bash
+# Core Components
+hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+hyprpicker wl-clipboard cliphist inotify-tools app2unit
+wireplumber trash-cli
+
+# Terminal & Shell
+foot fish fastfetch starship btop jq eza
+
+# Theming
+adw-gtk-theme papirus-icon-theme qt5ct-kde qt6ct-kde ttf-jetbrains-mono-nerd
+```
+
+#### Configuration Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/caelestia-dots/caelestia.git ~/.local/share/caelestia
+   ```
+
+2. Create symlinks for configuration files:
+   ```bash
+   ln -sf ~/.local/share/caelestia/{hypr,foot,fish,fastfetch,uwsm,btop} ~/.config/
+   ln -sf ~/.local/share/caelestia/starship.toml ~/.config/
+   ```
+
+## 🛠️ Application-Specific Setup
+
+### 🎵 Spicetify (Spotify)
+
+```bash
 spicetify config current_theme caelestia color_scheme caelestia custom_apps marketplace
 spicetify apply
 ```
 
-#### Installing VSCode/VSCodium configs:
+### 💻 VSCode/VSCodium
 
-Install VSCode or VSCodium, then copy or symlink `vscode/settings.json` and
-`vscode/keybindings.json` into the `$XDG_CONFIG_HOME/Code/User` (or `$XDG_CONFIG_HOME/VSCodium/User`
-if using VSCodium) folder. Then copy or symlink `vscode/flags.conf` to `$XDG_CONFIG_HOME/code-flags.conf`
-(or `$XDG_CONFIG_HOME/codium-flags.conf` if using VSCodium).
+1. Symlink configuration files:
+   ```bash
+   mkdir -p ~/.config/Code/User  # or ~/.config/VSCodium/User for VSCodium
+   ln -sf ~/.local/share/caelestia/vscode/{settings.json,keybindings.json} ~/.config/Code/User/
+   ln -sf ~/.local/share/caelestia/vscode/flags.conf ~/.config/code-flags.conf
+   ```
 
-Finally, install the extension VSIX from `vscode/caelestia-vscode-integration`.
+2. Install the Caelestia extension:
+   ```bash
+   code --install-extension vscode/caelestia-vscode-integration/caelestia-vscode-integration-*.vsix
+   ```
 
-```sh
-# Use `codium` if using VSCodium
-code --install-extension vscode/caelestia-vscode-integration/caelestia-vscode-integration-*.vsix
+### 🌐 Zen Browser
+
+1. Install Zen Browser
+2. Set up the theme:
+   ```bash
+   mkdir -p ~/.zen/<profile>/chrome
+   ln -sf ~/.local/share/caelestia/zen/userChrome.css ~/.zen/<profile>/chrome/
+   ```
+
+3. Install the native app:
+   ```bash
+   mkdir -p ~/.mozilla/native-messaging-hosts
+   cp ~/.local/share/caelestia/zen/native_app/manifest.json ~/.mozilla/native-messaging-hosts/caelestiafox.json
+   # Edit the manifest to replace {{ $lib }} with the absolute path to ~/.local/lib/caelestia
+   mkdir -p ~/.local/lib/caelestia
+   ln -sf ~/.local/share/caelestia/zen/native_app/app.fish ~/.local/lib/caelestia/caelestiafox
+   ```
+
+4. Install the [CaelestiaFox](https://addons.mozilla.org/en-US/firefox/addon/caelestiafox) extension
+
+## 🔄 Updating
+
+To update Caelestia and all dependencies:
+
+```bash
+# Update AUR packages (Arch Linux)
+yay -Syu
+
+# Update Caelestia configuration
+cd ~/.local/share/caelestia
+git pull
 ```
 
-#### Installing Zen Browser configs:
+## ⌨️ Keybindings
 
-Install Zen Browser, then copy or symlink `zen/userChrome.css` to the `chrome` folder in your
-profile of choice in `~/.zen`. e.g. `zen/userChrome.css -> ~/.zen/<profile>/chrome/userChrome.css`.
+| Key Combination | Action |
+|----------------|--------|
+| `Super` | Open application launcher |
+| `Super` + `#` | Switch to workspace # |
+| `Super` + `Shift` + `#` | Move window to workspace # |
+| `Super` + `T` | Open terminal (foot) |
+| `Super` + `W` | Open browser (Zen) |
+| `Super` + `C` | Open IDE (VSCodium) |
+| `Super` + `S` | Toggle special workspace |
+| `Ctrl` + `Alt` + `Delete` | Open session menu |
+| `Ctrl` + `Super` + `Space` | Toggle media play state |
+| `Ctrl` + `Super` + `Alt` + `R` | Restart the shell |
 
-Now install the native app by copying `zen/native_app/manifest.json` to
-`~/.mozilla/native-messaging-hosts/caelestiafox.json` and replacing the `{{ $lib }}` string in it
-with the absolute path of `~/.local/lib/caelestia` (this must be the absolute path, e.g.
-`/home/user/.local/lib/caelestia`). Then copy or symlink `zen/native_app/app.fish` to
-`~/.local/lib/caelestia/caelestiafox`.
+## 🤝 Contributing
 
-Finally, install the CaelestiaFox extension from [here](https://addons.mozilla.org/en-US/firefox/addon/caelestiafox).
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Updating
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Simply run `yay` to update the AUR packages, then `cd` into the repo directory and run `git pull` to update the configs.
+## 📄 License
 
-## Usage
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
 
-> [!NOTE]
-> These dots do not contain a login manager (for now), so you must install a
-> login manager yourself unless you want to log in from a TTY. I recommend
-> [`greetd`](https://sr.ht/~kennylevinsen/greetd) with
-> [`tuigreet`](https://github.com/apognu/tuigreet), however you can use
-> any login manager you want.
+## 🙏 Acknowledgments
 
-There aren't really any usage instructions... these are a set of dotfiles.
-
-Here's a list of useful keybinds though:
-
--   `Super` - open launcher
--   `Super` + `#` - switch to workspace `#`
--   `Super` `Alt` + `#` - move window to workspace `#`
--   `Super` + `T` - open terminal (foot)
--   `Super` + `W` - open browser (zen)
--   `Super` + `C` - open IDE (vscodium)
--   `Super` + `S` - toggle special workspace or close current special workspace
--   `Ctrl` `Alt` + `Delete` - open session menu
--   `Ctrl` `Super` + `Space` - toggle media play state
--   `Ctrl` `Super` `Alt` + `R` - restart the shell
+- [Hyprland](https://hyprland.org/) - The amazing Wayland compositor
+- [Fish shell](https://fishshell.com/) - A smart and user-friendly shell
+- [Starship](https://starship.rs/) - A minimal, blazing-fast prompt
+- And all the amazing open-source projects that make this possible!
