@@ -5,32 +5,32 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![AUR](https://img.shields.io/aur/version/caelestia-meta?color=1793D1&label=AUR%20Package)](https://aur.archlinux.org/packages/caelestia-meta)
 
-> A modern, elegant, and highly customizable dotfiles configuration for Linux, featuring Hyprland, Fish shell, and a carefully curated set of applications.
+> This is the main repo of the caelestia dots and contains the user configs for apps. This repo also includes an install script to install the entire dots.
 
-## 📸 Screenshots
+## Screenshots
 
 | ![Main Desktop](screenshots/main.png) | 
 |:--:| 
 | *Caelestia Desktop Environment* |
 
 | ![Screenshot 1](screenshots/20251020210630.png) |
-|
+|:--:|
 | *Application View* | *Terminal Workflow* |
 
 | ![Screenshot 2](screenshots/20251020210651.png) | ![Screenshot 3](screenshots/20251020210714.png) |
 |:--:|:--:|
 | *Customization* | *All Tabs* |
 
-## ✨ Features
+## Features
 
-- 🖥️ **Hyprland** - A dynamic tiling Wayland compositor
-- 🐚 **Fish Shell** with Starship prompt for a modern terminal experience
-- 🎨 Consistent theming across all applications
-- ⚡ Optimized for performance and productivity
-- 🔧 Easy installation and configuration
-- 🎯 Works out of the box with sensible defaults
+-  **Hyprland** - A dynamic tiling Wayland compositor
+-  **Fish Shell** with Starship prompt for a modern terminal experience
+-  Consistent theming across all applications
+-  Optimized for performance and productivity
+-  Easy installation and configuration
+-  Works out of the box with sensible defaults
 
-## 📦 Installation
+##  Installation
 
 ### Prerequisites
 
@@ -45,9 +45,12 @@ git clone https://github.com/caelestia-dots/caelestia.git ~/.local/share/caelest
 ~/.local/share/caelestia/install.fish
 ```
 
-> **Warning**
-> The install script creates symlinks to the config files. Do not move or remove the repository after installation.
-
+> [!WARNING]
+> The install script symlinks all configs into place, so you CANNOT
+> move/remove the repo folder once you run the install script. If
+> you do, most apps will not behave properly and some (e.g. Hyprland)
+> will fail to start completely. I recommend cloning the repo to
+> `~/.local/share/caelestia`.
 ### Installation Options
 
 The install script includes several options:
@@ -98,16 +101,16 @@ adw-gtk-theme papirus-icon-theme qt5ct-kde qt6ct-kde ttf-jetbrains-mono-nerd
    ln -sf ~/.local/share/caelestia/starship.toml ~/.config/
    ```
 
-## 🛠️ Application-Specific Setup
+##  Application-Specific Setup
 
-### 🎵 Spicetify (Spotify)
+###  Spicetify (Spotify)
 
 ```bash
 spicetify config current_theme caelestia color_scheme caelestia custom_apps marketplace
 spicetify apply
 ```
 
-### 💻 VSCode/VSCodium
+###  VSCode/VSCodium
 
 1. Symlink configuration files:
    ```bash
@@ -121,7 +124,7 @@ spicetify apply
    code --install-extension vscode/caelestia-vscode-integration/caelestia-vscode-integration-*.vsix
    ```
 
-### 🌐 Zen Browser
+###  Zen Browser
 
 1. Install Zen Browser
 2. Set up the theme:
@@ -141,7 +144,7 @@ spicetify apply
 
 4. Install the [CaelestiaFox](https://addons.mozilla.org/en-US/firefox/addon/caelestiafox) extension
 
-## 🔄 Updating
+##  Updating
 
 To update Caelestia and all dependencies:
 
@@ -154,7 +157,7 @@ cd ~/.local/share/caelestia
 git pull
 ```
 
-## ⌨️ Keybindings
+##  Keybindings And Usage
 
 | Key Combination | Action |
 |----------------|--------|
@@ -169,21 +172,15 @@ git pull
 | `Ctrl` + `Super` + `Space` | Toggle media play state |
 | `Ctrl` + `Super` + `Alt` + `R` | Restart the shell |
 
-## 🤝 Contributing
+> [!NOTE]
+> These dots do not contain a login manager (for now), so you must install a
+> login manager yourself unless you want to log in from a TTY. I recommend
+> [`greetd`](https://sr.ht/~kennylevinsen/greetd) with
+> [`tuigreet`](https://github.com/apognu/tuigreet), however you can use
+> any login manager you want.
 
-Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - [Hyprland](https://hyprland.org/) - The amazing Wayland compositor
 - [Fish shell](https://fishshell.com/) - A smart and user-friendly shell
