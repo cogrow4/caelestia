@@ -14,7 +14,7 @@
 | *Caelestia Desktop Environment* |
 
 | ![Screenshot 1](screenshots/20251020210630.png) |
-|:--:|:--:|
+|
 | *Application View* | *Terminal Workflow* |
 
 | ![Screenshot 2](screenshots/20251020210651.png) | ![Screenshot 3](screenshots/20251020210714.png) |
