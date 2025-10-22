@@ -1,9 +1,8 @@
-# 🌌 Caelestia
+# Caelestia
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/caelestia-dots/caelestia/graphs/commit-activity)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![AUR](https://img.shields.io/aur/version/caelestia-meta?color=1793D1&label=AUR%20Package)](https://aur.archlinux.org/packages/caelestia-meta)
+[![AUR](https://img.shields.io/aur/version/caelestia-meta?color=1793D1&label=AUR%20Package)](https://aur.archlinux.org/packages/caelestia-shell)
 
 > This is the main repo of the caelestia dots and contains the user configs for apps. This repo also includes an install script to install the entire dots.
 
