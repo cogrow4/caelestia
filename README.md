@@ -87,6 +87,12 @@ foot fish fastfetch starship btop jq eza
 adw-gtk-theme papirus-icon-theme qt5ct-kde qt6ct-kde ttf-jetbrains-mono-nerd
 ```
 
+> [!TIP]
+> If on Arch or an Arch-based distro, there is a meta package available in the AUR
+> that pulls in all dependencies (`caelestia-meta`).
+
+
+
 #### Configuration Setup
 
 1. Clone the repository:
