@@ -168,7 +168,7 @@ git pull
 |----------------|--------|
 | `Super` | Open application launcher |
 | `Super` + `#` | Switch to workspace # |
-| `Super` + `Shift` + `#` | Move window to workspace # |
+| `Super` + `Alt` + `#` | Move window to workspace # |
 | `Super` + `T` | Open terminal (foot) |
 | `Super` + `W` | Open browser (Zen) |
 | `Super` + `C` | Open IDE (VSCodium) |
